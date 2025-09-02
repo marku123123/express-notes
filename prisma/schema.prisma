@@ -9,11 +9,13 @@ generator client {
 }
 
 datasource db {
-  // This is the database connection configuration
-  provider = "postgresql"
+  provider  = "postgresql"
 
-  // Use the DATABASE_URL environment variable to connect to your database
-  url = env("DATABASE_URL")
+  // PgBouncer (runtime)
+  url       = env("DATABASE_URL")
+
+  // Direct connection (migrations)
+  directUrl = env("DIRECT_URL")
 }
 
 model Notes {
