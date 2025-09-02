@@ -12,7 +12,7 @@ datasource db {
   provider  = "postgresql"
 
   // PgBouncer (runtime)
-  url       = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 
   // Direct connection (migrations)
   directUrl = env("DIRECT_URL")
